@@ -1,0 +1,26 @@
+# .prettierignore
+# Direktori hasil build
+build
+dist
+# Node modules
+node_modules
+# ESLint cache
+.eslintcache
+# Husky & lint-staged artifacts
+.husky
+# Vite cache / temp
+.vite
+# MacOS
+.DS_Store
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+# Editor / IDE
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
