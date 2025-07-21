@@ -2,6 +2,9 @@ import { Links, Meta, ScrollRestoration, Scripts } from 'react-router'
 
 import type { Route } from '../+types/root'
 import '@/css/app.css'
+import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar'
+import { AppSidebar } from '@/components/common/sidebar/app-sidebar'
+import DashboardNavbar from '@/components/common/navbar/dashboard-navbar'
 
 export function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -13,9 +16,17 @@ export function RootLayout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
-        <ScrollRestoration />
-        <Scripts />
+        <SidebarProvider>
+          <AppSidebar />
+          <SidebarInset>
+            <DashboardNavbar />
+            <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
+              {children}
+              <ScrollRestoration />
+              <Scripts />
+            </div>
+          </SidebarInset>
+        </SidebarProvider>
       </body>
     </html>
   )
