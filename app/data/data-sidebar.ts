@@ -1,4 +1,14 @@
-import { SquareTerminal, Bot, House, Bell, icons, Plus, BookOpen, Scroll, SwatchBook } from 'lucide-react'
+import {
+  House,
+  Bell,
+  BookOpen,
+  Settings,
+  Users,
+  Images,
+  FileText,
+  Tag,
+  ShieldUser,
+} from 'lucide-react'
 
 export const dataSidebar = {
   user: {
@@ -33,14 +43,45 @@ export const dataSidebar = {
         },
         {
           title: 'Blog',
-          url: '#',
-          icon: Scroll,
+          url: '/',
+          icon: FileText,
         },
         {
           title: 'Categories',
-          url: '#',
-          icon: SwatchBook,
-          
+          url: '/',
+          icon: Tag,
+        },
+      ],
+    },
+
+    {
+      group: 'Resources',
+      items: [
+        {
+          title: 'Media',
+          url: '/content-manager/courses',
+          icon: Images,
+        },
+      ],
+    },
+
+    {
+      group: 'Settings',
+      items: [
+        {
+          title: 'General Settings',
+          url: '/',
+          icon: Settings,
+        },
+        {
+          title: 'Users',
+          url: '/content-manager/courses',
+          icon: Users,
+        },
+        {
+          title: 'Roles',
+          url: '/content-manager/courses',
+          icon: ShieldUser,
         },
       ],
     },

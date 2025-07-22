@@ -1,5 +1,6 @@
-import { SidebarTrigger } from '@/components/ui/sidebar'
 import { Separator } from '@radix-ui/react-separator'
+
+import { SidebarTrigger } from '@/components/ui/sidebar'
 
 export default function DashboardNavbar() {
   return (

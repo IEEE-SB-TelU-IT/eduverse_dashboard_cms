@@ -1,12 +1,13 @@
 import { Links, Meta, ScrollRestoration, Scripts } from 'react-router'
 
 import type { Route } from '../+types/root'
+
 import '@/css/app.css'
 import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar'
 import { AppSidebar } from '@/components/common/sidebar/app-sidebar'
 import DashboardNavbar from '@/components/common/navbar/dashboard-navbar'
 
-export function RootLayout({ children }: { children: React.ReactNode }) {
+export function DashbboardLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>

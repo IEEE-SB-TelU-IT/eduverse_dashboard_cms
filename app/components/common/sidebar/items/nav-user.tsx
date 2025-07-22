@@ -1,21 +1,11 @@
 'use client'
 
-import {
-  BadgeCheck,
-  Bell,
-  ChevronsUpDown,
-  CreditCard,
-  LogOut,
-  Sparkles,
-  Sun,
-  UserRoundPen,
-} from 'lucide-react'
+import { ChevronsUpDown, LogOut, Sun, UserRoundPen } from 'lucide-react'
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
@@ -92,9 +82,9 @@ export function NavUser({
               <UserRoundPen />
               Edit Profile
             </DropdownMenuItem>
-            <DropdownMenuSeparator/>
-            <DropdownMenuItem className='text-destructive'>
-              <LogOut className='text-destructive' />
+            <DropdownMenuSeparator />
+            <DropdownMenuItem className="text-destructive">
+              <LogOut className="text-destructive" />
               Log out
             </DropdownMenuItem>
           </DropdownMenuContent>

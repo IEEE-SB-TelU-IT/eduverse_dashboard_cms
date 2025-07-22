@@ -1,6 +1,7 @@
 'use client'
 
 import { ChevronRight, type LucideIcon } from 'lucide-react'
+import { Link } from 'react-router'
 
 import {
   Collapsible,
@@ -17,7 +18,6 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
 } from '@/components/ui/sidebar'
-import { Link } from 'react-router'
 
 export type NavMainGroup = {
   group: string
@@ -55,7 +55,7 @@ export function NavMain({ groups }: { groups: NavMainGroup[] }) {
                     <CollapsibleTrigger asChild>
                       <SidebarMenuButton tooltip={item.title}>
                         {item.icon && <item.icon />}
-                        <span className=''>{item.title}</span>
+                        <span className="">{item.title}</span>
                         <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
                       </SidebarMenuButton>
                     </CollapsibleTrigger>

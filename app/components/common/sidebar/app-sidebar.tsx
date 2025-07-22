@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Command } from 'lucide-react'
+import { Link } from 'react-router'
 
 import { NavMain } from '@/components/common/sidebar/items/nav-main'
 import { NavUser } from '@/components/common/sidebar/items/nav-user'
@@ -12,7 +13,6 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from '@/components/ui/sidebar'
-import { Link } from 'react-router'
 import { dataSidebar } from '@/data/data-sidebar'
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
