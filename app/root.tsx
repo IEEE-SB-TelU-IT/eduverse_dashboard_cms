@@ -1,14 +1,13 @@
 import { isRouteErrorResponse, Outlet } from 'react-router'
 
 import type { Route } from './+types/root'
-
-import { DashbboardLayout } from '@/layout/dashboard-layout'
+import { RootLayout } from './layout/root-layout'
 
 export default function App() {
   return (
-    <DashbboardLayout>
+    <RootLayout>
       <Outlet />
-    </DashbboardLayout>
+    </RootLayout>
   )
 }
 
