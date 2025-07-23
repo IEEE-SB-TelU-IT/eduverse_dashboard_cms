@@ -1,5 +1,5 @@
 import {
-  House,
+  HomeIcon as House,
   Bell,
   BookOpen,
   Settings,
@@ -7,7 +7,7 @@ import {
   Images,
   FileText,
   Tag,
-  ShieldUser,
+  ShieldIcon as ShieldUser,
 } from 'lucide-react'
 
 export const dataSidebar = {
@@ -43,12 +43,12 @@ export const dataSidebar = {
         },
         {
           title: 'Blog',
-          url: '/',
+          url: '/blog',
           icon: FileText,
         },
         {
           title: 'Categories',
-          url: '/',
+          url: '/categories',
           icon: Tag,
         },
       ],

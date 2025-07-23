@@ -1,3 +1,4 @@
+import type React from 'react'
 import { Links, Meta, ScrollRestoration, Scripts } from 'react-router'
 
 import type { Route } from '../+types/root'
@@ -6,10 +7,11 @@ import '@/css/app.css'
 import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar'
 import { AppSidebar } from '@/components/common/sidebar/app-sidebar'
 import DashboardNavbar from '@/components/common/navbar/dashboard-navbar'
+import { ThemeProvider } from '@/contexts/theme-context'
 
 export function DashbboardLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -17,17 +19,23 @@ export function DashbboardLayout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <SidebarProvider>
-          <AppSidebar />
-          <SidebarInset>
-            <DashboardNavbar />
-            <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-              {children}
-              <ScrollRestoration />
-              <Scripts />
-            </div>
-          </SidebarInset>
-        </SidebarProvider>
+        <ThemeProvider
+          defaultTheme="light"
+          storageKey="eduverse-ui-theme"
+          attribute="class"
+        >
+          <SidebarProvider>
+            <AppSidebar />
+            <SidebarInset>
+              <DashboardNavbar />
+              <div className="flex flex-1 flex-col gap-4 p-2 sm:p-4 pt-0">
+                {children}
+                <ScrollRestoration />
+                <Scripts />
+              </div>
+            </SidebarInset>
+          </SidebarProvider>
+        </ThemeProvider>
       </body>
     </html>
   )
