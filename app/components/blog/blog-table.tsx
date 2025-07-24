@@ -19,7 +19,12 @@ import {
   MoreHorizontal,
   Plus,
   Eye,
+  Trash,
+  EyeOff,
+  SquarePen,
+  Copy,
 } from 'lucide-react'
+import { Link } from 'react-router'
 
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
@@ -262,6 +267,7 @@ const columns: ColumnDef<Blog>[] = [
                 navigator.clipboard.writeText(blog.blog_id.toString())
               }
             >
+              <Copy className="mr-2 h-4 w-4" />
               Copy blog ID
             </DropdownMenuItem>
             <DropdownMenuSeparator />
@@ -269,15 +275,22 @@ const columns: ColumnDef<Blog>[] = [
               <Eye className="mr-2 h-4 w-4" />
               View blog
             </DropdownMenuItem>
-            <DropdownMenuItem>Edit blog</DropdownMenuItem>
+            <DropdownMenuItem>
+              <SquarePen className="mr-2 h-4 w-4" />
+              Edit blog
+            </DropdownMenuItem>
             <DropdownMenuSeparator />
             {blog.status === 'draft' && (
               <DropdownMenuItem>Publish blog</DropdownMenuItem>
             )}
             {blog.status === 'approved' && (
-              <DropdownMenuItem>Unpublish blog</DropdownMenuItem>
+              <DropdownMenuItem>
+                <EyeOff className="mr-2 h-4 w-4" />
+                Unpublish blog
+              </DropdownMenuItem>
             )}
             <DropdownMenuItem className="text-destructive">
+              <Trash className="mr-2 h-4 w-4" />
               Delete blog
             </DropdownMenuItem>
           </DropdownMenuContent>
@@ -435,15 +448,19 @@ export function BlogTable({ data }: BlogTableProps) {
             </DropdownMenu>
           </div>
         </div>
-        <Button className="h-9 text-xs md:text-sm md:h-10">
-          <Plus className="mr-1 h-3 w-3 md:mr-2 md:h-4 md:w-4" />
-          Add Blog Post
+        <Button asChild className="h-9 text-xs md:text-sm md:h-10">
+          <Link to="/blog/add">
+            {' '}
+            <Plus className="mr-1 h-3 w-3 md:mr-2 md:h-4 md:w-4" />
+            Add Blog Post
+          </Link>
         </Button>
       </div>
 
       <div className="rounded-md border overflow-hidden">
         <div className="overflow-x-auto">
-          <Table>
+          <Table className="min-w-max">
+            {' '}
             <TableHeader>
               {table.getHeaderGroups().map((headerGroup) => (
                 <TableRow key={headerGroup.id} className="hover:bg-transparent">

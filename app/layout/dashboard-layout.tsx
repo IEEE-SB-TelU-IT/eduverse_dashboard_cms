@@ -26,7 +26,7 @@ export function DashbboardLayout({ children }: { children: React.ReactNode }) {
         >
           <SidebarProvider>
             <AppSidebar />
-            <SidebarInset>
+            <SidebarInset className="overflow-x-hidden">
               <DashboardNavbar />
               <div className="flex flex-1 flex-col gap-4 p-2 sm:p-4 pt-0">
                 {children}

@@ -13,7 +13,15 @@ import {
   getSortedRowModel,
   useReactTable,
 } from '@tanstack/react-table'
-import { ArrowUpDown, ChevronDown, MoreHorizontal, Plus } from 'lucide-react'
+import {
+  ArrowUpDown,
+  ChevronDown,
+  MoreHorizontal,
+  Plus,
+  Copy,
+  SquarePen,
+  Trash,
+} from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
@@ -236,14 +244,19 @@ const columns: ColumnDef<Category>[] = [
                 navigator.clipboard.writeText(category.category_id.toString())
               }
             >
+              <Copy className="mr-2 h-4 w-4" />
               Copy category ID
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>Edit category</DropdownMenuItem>
+            <DropdownMenuItem>
+              <SquarePen className="mr-2 h-4 w-4" />
+              Edit category
+            </DropdownMenuItem>
             {category.deleted_at ? (
               <DropdownMenuItem>Restore category</DropdownMenuItem>
             ) : (
               <DropdownMenuItem className="text-destructive">
+                <Trash className="mr-2 h-4 w-4" />
                 Delete category
               </DropdownMenuItem>
             )}
@@ -397,7 +410,8 @@ export function CategoriesTable({ data }: CategoriesTableProps) {
 
       <div className="rounded-md border overflow-hidden">
         <div className="overflow-x-auto">
-          <Table>
+          <Table className="min-w-max">
+            {' '}
             <TableHeader>
               {table.getHeaderGroups().map((headerGroup) => (
                 <TableRow key={headerGroup.id} className="hover:bg-transparent">

@@ -1,6 +1,6 @@
 import type { Route } from './+types/blog'
 
-import { BlogTable } from '@/components/blog-table'
+import { BlogTable } from '@/components/blog/blog-table'
 import { blogData } from '@/data/blog-data'
 
 export function meta({}: Route.MetaArgs) {
